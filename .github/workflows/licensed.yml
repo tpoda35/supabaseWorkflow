@@ -1,0 +1,24 @@
+name: Licensed
+
+on:
+  pull_request:
+    branches:
+      - staging   # Targets PRs pointing to your staging branch
+    paths:
+      - 'package.json'
+      - 'package-lock.json' # ONLY runs if your dependencies actually changed!
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Check licenses
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: latest
+
+      - run: npm ci
+      - run: npm run licensed-check
