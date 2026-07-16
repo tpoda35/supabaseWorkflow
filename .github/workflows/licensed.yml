@@ -4,9 +4,6 @@ on:
   pull_request:
     branches:
       - staging   # Targets PRs pointing to your staging branch
-    paths:
-      - 'package.json'
-      - 'package-lock.json' # ONLY runs if your dependencies actually changed!
 
 jobs:
   test:
