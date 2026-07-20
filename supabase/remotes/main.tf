@@ -1,4 +1,4 @@
-resource "supabase_storage_bucket" "images" {
+resource "supabase_storage_bucket" "imagess" {
   project_ref        = var.linked_project
   name               = "images"
   public             = true
