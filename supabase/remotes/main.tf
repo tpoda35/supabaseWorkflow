@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    supabase = {
+      source  = "supabase/supabase"
+      version = "~> 1.0"
+    }
+  }
+}
+
 resource "supabase_storage_bucket" "imagess" {
   project_ref        = var.linked_project
   name               = "images"
